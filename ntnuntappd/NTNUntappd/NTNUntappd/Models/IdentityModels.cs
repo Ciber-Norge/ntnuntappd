@@ -29,5 +29,7 @@ namespace NTNUntappd.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<NTNUntappd.Models.BeerModels> BeerModels { get; set; }
     }
 }
