@@ -9,6 +9,13 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<form>
+    <div class="form-group">
+        <label for="query">Søk</label>
+        <input class="form-control" id="query" name="query" type="text" value="@ViewBag.query" placeholder="Navn, Type, Bryggeri" style="max-width: none">
+    </div>
+    <input type="submit" value="Søk" class="btn btn-default" style="margin-bottom: 30px" />
+</form>
 <table class="table">
     <tr>
         <th>

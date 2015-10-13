@@ -15,9 +15,19 @@ namespace NTNUntappd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Beer
-        public ActionResult Index()
+        public ActionResult Index(String query = null)
         {
-            return View(db.BeerModels.ToList());
+
+            if (query == null)
+            {
+                return View(db.BeerModels.ToList());
+            }
+
+            query = query?.ToLower();
+
+            IEnumerable<BeerModels> beers = db.BeerModels.Where(b => b.Name.Contains(query) || b.Brewery.Contains(query) || b.Type.Contains(query));
+
+            return View(beers.ToList());
         }
 
         // GET: Beer/Details/5
