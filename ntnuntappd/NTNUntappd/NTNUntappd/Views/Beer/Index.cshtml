@@ -26,10 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Check me in!", "Create", new {controller="CheckIn", id = item.Id })
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.ActionLink(item.Name, "CheckIn", new { controller="CheckIn", id = item.Id})
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Type)
