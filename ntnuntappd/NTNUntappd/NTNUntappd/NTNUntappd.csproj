@@ -166,25 +166,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510081807104_init.cs" />
-    <Compile Include="Migrations\201510081807104_init.Designer.cs">
-      <DependentUpon>201510081807104_init.cs</DependentUpon>
+    <Compile Include="Migrations\201510131134355_init.cs" />
+    <Compile Include="Migrations\201510131134355_init.Designer.cs">
+      <DependentUpon>201510131134355_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510121926426_Beer.cs" />
-    <Compile Include="Migrations\201510121926426_Beer.Designer.cs">
-      <DependentUpon>201510121926426_Beer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510130830528_checkin.cs" />
-    <Compile Include="Migrations\201510130830528_checkin.Designer.cs">
-      <DependentUpon>201510130830528_checkin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510131044454_update-checkin.cs" />
-    <Compile Include="Migrations\201510131044454_update-checkin.Designer.cs">
-      <DependentUpon>201510131044454_update-checkin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510131053567_update.cs" />
-    <Compile Include="Migrations\201510131053567_update.Designer.cs">
-      <DependentUpon>201510131053567_update.cs</DependentUpon>
+    <Compile Include="Migrations\201510131138342_Initial.cs" />
+    <Compile Include="Migrations\201510131138342_Initial.Designer.cs">
+      <DependentUpon>201510131138342_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -279,20 +267,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510081807104_init.resx">
-      <DependentUpon>201510081807104_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510131134355_init.resx">
+      <DependentUpon>201510131134355_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510121926426_Beer.resx">
-      <DependentUpon>201510121926426_Beer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510130830528_checkin.resx">
-      <DependentUpon>201510130830528_checkin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510131044454_update-checkin.resx">
-      <DependentUpon>201510131044454_update-checkin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510131053567_update.resx">
-      <DependentUpon>201510131053567_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510131138342_Initial.resx">
+      <DependentUpon>201510131138342_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

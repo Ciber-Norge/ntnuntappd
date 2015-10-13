@@ -7,13 +7,13 @@ namespace NTNUntappd.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class checkin : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(checkin));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510130830528_checkin"; }
+            get { return "201510131134355_init"; }
         }
         
         string IMigrationMetadata.Source
