@@ -31,5 +31,7 @@ namespace NTNUntappd.Models
         }
 
         public System.Data.Entity.DbSet<NTNUntappd.Models.BeerModels> BeerModels { get; set; }
+
+        public System.Data.Entity.DbSet<NTNUntappd.Models.CheckInModels> CheckInModels { get; set; }
     }
 }
