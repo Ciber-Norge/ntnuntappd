@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 
 namespace NTNUntappd.Models
 {
@@ -10,5 +11,6 @@ namespace NTNUntappd.Models
         public int Id { get; set; }
         public ApplicationUser UserId { get; set; }
         public BeerModels Beer { get; set; }
+        public string UserEmail { get; set; } 
     }
 }

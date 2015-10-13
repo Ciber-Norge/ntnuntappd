@@ -36,7 +36,7 @@ namespace NTNUntappd.Controllers
         }
 
         // GET: CheckIn/Create
-        public ActionResult Create(int id)
+        public ActionResult Create()
         {
             var firstOrDefault = db.Users.FirstOrDefault();
             if (firstOrDefault != null) ViewBag.UserId = firstOrDefault.Email;
@@ -52,11 +52,10 @@ namespace NTNUntappd.Controllers
                 Name = beer
             };
 
-
             var checkin = new CheckInModels()
             {
                 Beer = beerMod,
-                UserId = user
+                UserEmail = user
             };
 
             if (ModelState.IsValid)
