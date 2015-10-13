@@ -23,7 +23,7 @@ namespace NTNUntappd.Controllers
                 return View(db.BeerModels.ToList());
             }
 
-            query = query?.ToLower();
+            query = query.ToLower();
 
             IEnumerable<BeerModels> beers = db.BeerModels.Where(b => b.Name.Contains(query) || b.Brewery.Contains(query) || b.Type.Contains(query));
 
