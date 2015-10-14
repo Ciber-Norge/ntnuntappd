@@ -52,10 +52,15 @@ namespace NTNUntappd.Controllers
                 Name = beer
             };
 
+            var userMod = new ApplicationUser()
+            {
+                Email = user
+            };
+
             var checkin = new CheckInModels()
             {
                 Beer = beerMod,
-                UserEmail = user
+                UserId = userMod
             };
 
             if (ModelState.IsValid)
@@ -68,23 +73,6 @@ namespace NTNUntappd.Controllers
             return View();
         }
 
-        // POST: CheckIn/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id")] CheckInModels checkInModels)
-        {
-            /*if (ModelState.IsValid)
-            {
-                db.CheckInModels.Add(checkInModels);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(checkInModels);*/
-            return View();
-        }
 
         // GET: CheckIn/Edit/5
         public ActionResult Edit(int? id)

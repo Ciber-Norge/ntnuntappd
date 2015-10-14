@@ -166,9 +166,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510131245554_init.cs" />
-    <Compile Include="Migrations\201510131245554_init.Designer.cs">
-      <DependentUpon>201510131245554_init.cs</DependentUpon>
+    <Compile Include="Migrations\201510141806537_init.cs" />
+    <Compile Include="Migrations\201510141806537_init.Designer.cs">
+      <DependentUpon>201510141806537_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -188,10 +188,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\CiberUntappd.pubxml" />
-    <None Include="Properties\PublishProfiles\NTNUntappd %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\ntnuntappd %283%29.pubxml" />
-    <None Include="Properties\PublishProfiles\NTNUntappd.pubxml" />
+    <None Include="Properties\PublishProfiles\OldCiberUntappd.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -263,8 +260,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510131245554_init.resx">
-      <DependentUpon>201510131245554_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510141806537_init.resx">
+      <DependentUpon>201510141806537_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
