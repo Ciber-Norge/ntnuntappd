@@ -17,10 +17,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Beer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserEmail)
+            @Html.DisplayFor(modelItem => item.Beer.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |

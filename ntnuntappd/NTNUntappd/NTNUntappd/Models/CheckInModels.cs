@@ -12,7 +12,9 @@ namespace NTNUntappd.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public ApplicationUser UserId { get; set; }
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
+        public int BeerId { get; set; }
         public BeerModels Beer { get; set; }
     }
 }
