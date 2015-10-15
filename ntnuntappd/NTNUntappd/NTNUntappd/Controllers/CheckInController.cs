@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using NTNUntappd.Models;
@@ -36,40 +37,40 @@ namespace NTNUntappd.Controllers
         }
 
         // GET: CheckIn/Create
-        public ActionResult Create()
+        public ActionResult Create(string beerName)
         {
-            var firstOrDefault = db.Users.FirstOrDefault();
-            if (firstOrDefault != null) ViewBag.UserId = firstOrDefault.Email;
-
-            var beerModels = db.BeerModels.FirstOrDefault();
-            if (beerModels != null) ViewBag.BeerName = beerModels.Name;
-
-            var user = ViewBag.UserId;
-            var beer = ViewBag.BeerName;
-
-            var beerMod = new BeerModels()
+            var windowsIdentity = WindowsIdentity.GetCurrent();
+            if (windowsIdentity != null)
             {
-                Name = beer
-            };
+                string userEmail = windowsIdentity.Name;
 
-            var userMod = new ApplicationUser()
-            {
-                Email = user
-            };
+                var beerId = db.BeerModels.FirstOrDefault(models => models.Name == beerName).Id;
 
-            var checkin = new CheckInModels()
-            {
-                Beer = beerMod,
-                UserId = userMod
-            };
+                var beerMod = new BeerModels()
+                {
+                    Name = beerName,
+                    Id = beerId
+                };
 
-            if (ModelState.IsValid)
-            {
-                db.CheckInModels.Add(checkin);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var userMod = new ApplicationUser()
+                {
+                    Email = userEmail
+                };
+
+                var checkin = new CheckInModels()
+                {
+                    Beer = beerMod,
+                    UserId = userMod,
+                };
+
+                if (ModelState.IsValid)
+                {
+                    db.CheckInModels.Add(checkin);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            
+
             return View();
         }
 
