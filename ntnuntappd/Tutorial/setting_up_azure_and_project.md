@@ -18,7 +18,7 @@ Database server -> create new
 
 ## VS 2013 ##
 Site name -> name
-Subscriprtion? -> Trial?
+Subscription? -> Trial?
 Region -> North Europe
 Databse servers -> create new server
   + Database username -> wabby
