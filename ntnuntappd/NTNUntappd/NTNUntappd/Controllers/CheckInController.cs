@@ -12,6 +12,7 @@ using System.Diagnostics;
 
 namespace NTNUntappd.Controllers
 {
+    [Authorize]
     public class CheckInController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -10,6 +10,7 @@ using NTNUntappd.Models;
 
 namespace NTNUntappd.Controllers
 {
+    [Authorize]
     public class BeerController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
