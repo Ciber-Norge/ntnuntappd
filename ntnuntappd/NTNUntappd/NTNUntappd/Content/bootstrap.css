@@ -4501,12 +4501,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #53018C;
   border-color: #080808;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  color: #FFFFFF;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -4549,7 +4549,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: transparent;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
@@ -4934,7 +4934,11 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  
+  
+  background-image: url("beers.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .jumbotron h1 {
@@ -4952,6 +4956,7 @@ a.list-group-item.active > .badge,
 
 @media screen and (min-width: 768px) {
   .jumbotron {
+    min-height: 200px;
     padding-top: 48px;
     padding-bottom: 48px;
   }
