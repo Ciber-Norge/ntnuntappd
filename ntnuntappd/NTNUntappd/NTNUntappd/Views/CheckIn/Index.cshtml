@@ -1,18 +1,19 @@
 ﻿@model IEnumerable<NTNUntappd.Models.CheckInModels>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tappd øl";
 }
 
-<h2>Index</h2>
+<h2>Øl jeg har tæppa</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="form-group">
+    @Html.ActionLink("Check in mer øl", "Index", "Beer")
+</div>
+
 <table class="table">
     <tr>
         <th>CheckIns</th>
-        <th>Count</th>
+        <th>Antall</th>
     </tr>
     
 @if (Model.Count() > 0)

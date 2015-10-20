@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<NTNUntappd.Models.BeerModels>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Øl";
 }
 
-<h2>Index</h2>
+<h2>Liste over øl</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Legg til øl", "Create")
 </p>
 <form>
     <div class="form-group">
@@ -19,13 +19,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayName("Navn")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayName("Type")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery)
+            @Html.DisplayName("Bryggeri")
         </th>
         <th></th>
     </tr>
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Brewery)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-            @Html.ActionLink("Details", "Details", new {id = item.Id}) |
-            @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+            @Html.ActionLink("Rediger", "Edit", new {id = item.Id}) |
+            @Html.ActionLink("Detaljer", "Details", new {id = item.Id}) |
+            @Html.ActionLink("Slett", "Delete", new {id = item.Id})
         </td>
     </tr>
 }
