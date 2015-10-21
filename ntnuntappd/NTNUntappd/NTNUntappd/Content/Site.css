@@ -29,3 +29,13 @@ textarea {
     background-color: #53018C;
     color: #ffffff;
 }
+
+.navbar-inverse {
+    background-color: #53018C;
+}
+
+#beerimage {
+    width: auto;
+    max-width: 100%;
+    margin: auto;
+}

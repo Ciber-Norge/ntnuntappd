@@ -4936,9 +4936,7 @@ a.list-group-item.active > .badge,
   color: inherit;
   
   
-  background-image: url("beers.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
+
 }
 
 .jumbotron h1 {
