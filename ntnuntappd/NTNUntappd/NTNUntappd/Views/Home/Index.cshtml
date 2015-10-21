@@ -1,7 +1,6 @@
 ﻿@using NTNUntappd.Migrations
 @using NTNUntappd.Models
-@model IEnumerable<NTNUntappd.Models.BeerModels>
-
+@model Dictionary<BeerModels, int>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -14,6 +13,29 @@
     <img src="~/Resources/beers.jpg" id="beerimage"/>
 </div>
 
-
-
 <button class="button" id="" onclick='window.location = "@Url.Action("Index", "Beer")";'>Check in øl!</button>
+
+<table class="table table-striped">
+    <tr>
+        <th>CheckIns</th>
+        <th>Antall</th>
+    </tr>
+    @if (Model.Count() > 0)
+    {
+        foreach (var group in Model)
+        {
+
+            var beer = group.Key;
+            <tr>
+                <td>
+                    @Html.DisplayFor(g => group.Key.Name)
+                </td>
+                <td>
+                    @Html.DisplayName(group.Value.ToString())
+                </td>
+            </tr>
+
+        }
+    }
+
+</table>
