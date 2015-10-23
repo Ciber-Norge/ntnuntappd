@@ -35,8 +35,8 @@ namespace NTNUntappd.Controllers
             var dict = grouped.ToDictionary(p => p.Key);
             var groupedCount = dict.ToDictionary(v => v.Key, v => v.Value.Count());
             var sorted = from entry in groupedCount orderby entry.Value descending select entry;
-            var lol = sorted.ToDictionary(pair => pair.Key, pair => pair.Value);
-           return View(lol);
+            var sortedDict = sorted.ToDictionary(pair => pair.Key, pair => pair.Value);
+           return View(sortedDict);
         }
     }
 }
