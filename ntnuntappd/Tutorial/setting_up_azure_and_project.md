@@ -1,56 +1,29 @@
-# Initial screen #
-1. new project -> ASP.NET Web Application
-  - Name: Wabby
-2. ASP.NET 4.5.2 templates -> MVC
-  (check host in the cloud if unchecked. Use website)
+# Setting up the SQL database in Azure #
+1. Log in to manage.windowsazure.com
+2. Select "SQL DATABASES" in the column on the left
+3. Press "+ NEW" in the bottom left corner, then "QUICK CREATE"
+4. Fill in the information as wanted, then press "CREATE SQL DATABASE"
 
+# Setting up the Web App in Azure #
+1. Select "WEB APPS" in the column on the left
+2. Press "+ NEW" in the bottom left corner, then "QUICK CREATE"
+3. Fill in the information as wanted, then press "CREATE WEB APP"
+4. After the new web app has finished its setup click on its name
+5. Select the "LINKED RESOURCES" tab, then "LINK A RESOURCE"
+6. "LINK AN EXISTING RESOURCE"
+7. "SQL DATABASE"
+8. Select the database created earlier and enter the login password associated with it
 
-# Next screen
-## (VS 2015) #
-(yelow means not allowed)
-App service plan -> create new -> wabbyap
-Resource group -> Create new Resource group -> wabbyresgroup
-Region -> North Europe
-Database server -> create new
-  + Database server -> wabbybase  (must be lower case)
-  + Database username -> wabby
-  + Database Passoword -> Qwerty123!
+# Setting up the project in Visual Studio #
+1. New Project
+2. Create a ASP MVC project, give it a name (can be the same as the Web App name created in Azure)
+3. Make sure the MVC template is selected, then press OK
+4. In the next window ("Configure Microsoft Azure Web App"), press cancel. This will be setup a little later.
+5. In the "Solution Explorer", right click the project folder and select publish.
+	- Profile: Microsoft Azure Web Apps -> In the "Existing Web Apps" dropdown, select the Web App created in Azure
+	- Settings: Copy the entire "DefaulConnection" string
+	- Press publish, wait for publish to finish.
+6. Open Web.config, which is located inside the main project filder (probably the file on the bottom of the solution explorer)
+	- Replace the entire connectionString value (at line 14) with the string copied in step 5. The application will now connect to the SQL database when running the program locally rather than having a separate local database.
 
-## VS 2013 ##
-Site name -> name
-Subscription? -> Trial?
-Region -> North Europe
-Databse servers -> create new server
-  + Database username -> wabby
-  + Database password -> Qwerty123!
-
-# Press OK #
-Overall status failed will/can be displayed, not to worry
-
-# Setting up publishing details #
-Solution explorer -> Wabby (right click) -> publish:
-### Profile ###
-Microsoft Azure Webapp (websites? VS2013) -> Exisiting Web Apps -> Wabby
-### Connection ###
-Validate connection //is okay
-### Settings ###
-DefaultConnection -> press the "..." button -> rename Wabby_db to wabbybase -> Test connection (will/can fail)
-### Publish! ###
-Press the publish button
-## Azure website ##
-Log on to azure. Manage -> SQL Databases -> +New -> Quick create
-  - Database name : wabbybase
-  - server: wabbybase
-
-Select the wabbybase sql database -> Design your SQL database -> Set up Windows Azure firewall rules for this IP address -> yes
-  + Back into Solution Explorer -> Publish -> Settings -> test connection should work
-  + publish (not sure if necessary...)
-
-### Fix connection string ###
-In Web.config, replace the connection string with the connection string from Publish -> Settings -> "...", Remove Integrated Security or set it to false.
-
-# Push database to server #
-View -> Other windows -> Package Manage console:
-  - Enable-Migrations (autocomplete fo show)
-  - Add-Migration chooseNameOfMigration
-  - Update-Database
+The project is now setup to publish to the Azure webapp and to use the database associated with the web app.
