@@ -29,5 +29,7 @@ namespace CiBeer.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CiBeer.Models.BeerModel> BeerModels { get; set; }
     }
 }
