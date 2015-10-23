@@ -10,20 +10,18 @@
     @Html.ActionLink("Check in mer øl", "Index", "Beer")
 </div>
 
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>CheckIns</th>
         <th>Antall</th>
     </tr>
     
-@if (Model.Count() > 0)
+@if (Model.Any())
 {
     var groups = Model.GroupBy(checkIn => checkIn.Beer.Name, checkIn => checkIn.Id);
 
     foreach (var group in groups)
     {
-
-        var beer = group.Key;
         <tr>
             <td>
                 @Html.DisplayFor(g => group.Key)
@@ -31,13 +29,7 @@
             <td>
                 @Html.DisplayName("" + group.Count())
             </td>
-            <td>
-            </td>
         </tr>
-        
     }
 }
-
-
-
 </table>

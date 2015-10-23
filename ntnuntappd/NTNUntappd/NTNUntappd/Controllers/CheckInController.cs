@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using NTNUntappd.Models;
 using System.Diagnostics;
+using Microsoft.AspNet.Identity;
 
 namespace NTNUntappd.Controllers
 {
@@ -20,7 +21,7 @@ namespace NTNUntappd.Controllers
         // GET: CheckIn
         public ActionResult Index()
         {
-            return View(db.CheckInModels.Include(x => x.Beer).Include(y => y.User).ToList());
+            return View(db.CheckInModels.Include(x => x.Beer).Include(y => y.User).ToList().Where(models => models.UserId == User.Identity.GetUserId()));
         }
 
         // GET: CheckIn/Details/5
