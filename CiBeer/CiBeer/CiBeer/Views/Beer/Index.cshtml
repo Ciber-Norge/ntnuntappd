@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<CiBeer.Models.BeerModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Øl";
 }
 
-<h2>Index</h2>
+<h2>Liste over øl</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Legg til øl", "Create")
 </p>
+<form>
+    <div class="form-group">
+        <label for="query">Søk</label>
+        <input class="form-control" id="query" name="query" type="text" value="@ViewBag.query" placeholder="Navn, Type, Bryggeri" style="max-width: none">
+    </div>
+    <input type="submit" value="Søk" class="btn btn-default" style="margin-bottom: 30px" />
+</form>
+
 <table class="table">
     <tr>
         <th>
@@ -26,7 +34,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.ActionLink(item.Name, "Create", new { controller = "CheckIn", action = "Create", beerName = item.Name })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Type)

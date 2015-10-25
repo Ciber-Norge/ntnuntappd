@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity;
 
 namespace CiBeer.Controllers
 {
+    [Authorize] //User has to be logged in
     public class CheckInController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
