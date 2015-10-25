@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiBeer", "CiBeer\CiBeer.csproj", "{15B5F555-5705-42CD-9792-5C96FC24449B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{63F13D98-69E4-415C-B70E-205A043F086F}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{3E6824CD-335B-4852-8744-B62214DC9574}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\CiBeer-WAWS-dev.json = PublishScripts\Configurations\CiBeer-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B5F555-5705-42CD-9792-5C96FC24449B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B5F555-5705-42CD-9792-5C96FC24449B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B5F555-5705-42CD-9792-5C96FC24449B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B5F555-5705-42CD-9792-5C96FC24449B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E6824CD-335B-4852-8744-B62214DC9574} = {63F13D98-69E4-415C-B70E-205A043F086F}
+	EndGlobalSection
+EndGlobal
