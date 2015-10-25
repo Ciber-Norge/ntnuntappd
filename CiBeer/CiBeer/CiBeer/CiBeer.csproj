@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BeerController.cs" />
+    <Compile Include="Controllers\CheckInController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,6 +177,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BeerModel.cs" />
+    <Compile Include="Models\CheckInModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,6 +248,11 @@
     <Content Include="Views\Beer\Details.cshtml" />
     <Content Include="Views\Beer\Edit.cshtml" />
     <Content Include="Views\Beer\Index.cshtml" />
+    <Content Include="Views\CheckIn\Create.cshtml" />
+    <Content Include="Views\CheckIn\Delete.cshtml" />
+    <Content Include="Views\CheckIn\Details.cshtml" />
+    <Content Include="Views\CheckIn\Edit.cshtml" />
+    <Content Include="Views\CheckIn\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

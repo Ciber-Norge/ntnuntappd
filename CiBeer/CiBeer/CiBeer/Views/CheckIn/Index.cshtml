@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CiBeer.Models.CheckInModel>
+
+@{
+    ViewBag.Title = "Tappd øl";
+}
+<h2>Øl jeg har tæppa</h2>
+<div class="form-group">
+    @Html.ActionLink("Check in mer øl", "Index", "Beer")
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>CheckIns</th>
+        <th>Antall</th>
+    </tr>
+
+    @if (Model.Any())
+    {
+        var groups = Model.GroupBy(checkIn => checkIn.Beer.Name, checkIn => checkIn.Id);
+
+        foreach (var group in groups)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(g => group.Key)
+                </td>
+                <td>
+                    @Html.DisplayName("" + group.Count())
+                </td>
+            </tr>
+        }
+    }
+</table>
