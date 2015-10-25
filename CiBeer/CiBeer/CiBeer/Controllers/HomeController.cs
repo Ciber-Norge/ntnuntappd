@@ -12,8 +12,6 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using WebGrease.Css.Extensions;
 
-
-
 namespace CiBeer.Controllers
 {
     public class HomeController : Controller
@@ -21,14 +19,14 @@ namespace CiBeer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
+            
             var entries = db.CheckInModels.Include(models => models.Beer).Include(models => models.User).ToList();
             var grouped = entries.GroupBy(models => models.Beer).OrderBy(groups => groups.Count());
 
             var dict = grouped.ToDictionary(p => p.Key);
             var groupedCount = dict.ToDictionary(v => v.Key, v => v.Value.Count());
-            var sorted = from entry in groupedCount orderby entry.Value descending select entry;
-            var sortedDict = sorted.ToDictionary(pair => pair.Key, pair => pair.Value);
-            return View(sortedDict);
+
+            return View(groupedCount);
         }
     }
 }

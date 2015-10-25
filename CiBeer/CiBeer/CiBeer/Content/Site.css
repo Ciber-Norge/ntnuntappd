@@ -36,7 +36,7 @@ textarea {
 }
 
 #button {
-    margin: 20px;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -49,4 +49,8 @@ textarea {
     margin: auto;
     max-width: 100%;
     width: auto;
+}
+
+.checkinbutton{
+    margin: 10px;
 }
