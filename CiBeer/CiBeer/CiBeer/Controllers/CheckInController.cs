@@ -69,14 +69,12 @@ namespace CiBeer.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CheckInModel checkInModel = db.CheckInModels.Find(id);
-            if (checkInModel == null)
+            CheckInModel checkInModels = db.CheckInModels.Find(id);
+            if (checkInModels == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BeerId = new SelectList(db.BeerModels, "Id", "Name", checkInModel.BeerId);
-            ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", checkInModel.UserId);
-            return View(checkInModel);
+            return View(checkInModels);
         }
 
         // POST: CheckIn/Edit/5
@@ -92,24 +90,16 @@ namespace CiBeer.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BeerId = new SelectList(db.BeerModels, "Id", "Name", checkInModel.BeerId);
-            ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", checkInModel.UserId);
             return View(checkInModel);
         }
 
         // GET: CheckIn/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CheckInModel checkInModel = db.CheckInModels.Find(id);
-            if (checkInModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(checkInModel);
+            CheckInModel checkInModels = db.CheckInModels.Find(id);
+            db.CheckInModels.Remove(checkInModels);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: CheckIn/Delete/5
