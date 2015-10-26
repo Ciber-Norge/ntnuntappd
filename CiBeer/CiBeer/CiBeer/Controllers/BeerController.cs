@@ -10,14 +10,19 @@ using CiBeer.Models;
 
 namespace CiBeer.Controllers
 {
+    [Authorize]
     public class BeerController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Beer
-        public ActionResult Index()
+        public ActionResult Index(string query = "")
         {
-            return View(db.BeerModels.ToList());
+            query = query.ToLower();
+
+            IEnumerable<BeerModel> beers = db.BeerModels.Where(b => b.Name.Contains(query) || b.Brewery.Contains(query) || b.Type.Contains(query));
+
+            return View(beers.ToList());
         }
 
         // GET: Beer/Details/5
