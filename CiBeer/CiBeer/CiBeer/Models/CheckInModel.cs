@@ -8,7 +8,6 @@ namespace CiBeer.Models
 {
     public class CheckInModel
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
