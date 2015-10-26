@@ -1,0 +1,11 @@
+Oppgave 1: sette opp azure med prosjekt
+Oppgave 2: Fjerne overflødig kode
+Oppgave 3: Legg inn forsidebilde, endre farger
+Oppgave 3: Lage første modell/kontroller/view - kun visning av ølliste
+Oppgave 4: Implementer søk i øl database, (Beer/Index), søk på navn, type og bryggeri
+Oppgave 5: Implementer checkin av øl (ny mvc og redigering av index.cshtml)
+Oppgave 6: Legg til en checkin-knapp på forsiden
+Oppgave 6: Legg til en "topp 10" liste på forsiden (må ikke bruke javascript hvis for stress)
+Oppgave 7: Legg til venner
+Oppgave 8: Legg til badges (achievements) 
+Oppgave 9: Legg til muligheten for å toaste en checkin
